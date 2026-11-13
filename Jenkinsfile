@@ -25,4 +25,4 @@ pipeline {
             echo "Day 7 Pipeline finished executing from Git!"
         }
     }
-}
+
