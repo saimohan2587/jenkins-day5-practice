@@ -18,11 +18,12 @@ commands = [
     "network 10.10.20.0 0.0.0.255 area 0"
 ]
 
-for dev in devices:
-    print(f"\n>>> Applying configurations to {dev['host']}...")
-    ssh = ConnectHandler(**dev)
-    output = ssh.send_config_set(commands)
-    print(output)
-    ssh.disconnect()
+if __name__ == "__main__":
+    for dev in devices:
+        print(f"\n>>> Applying configurations to {dev['host']}...")
+        ssh = ConnectHandler(**dev)
+        output = ssh.send_config_set(commands)
+        print(output)
+        ssh.disconnect()
 
-print("\n[SUCCESS] Configurations pushed safely!")
+    print("\n[SUCCESS] Configurations pushed safely!")
